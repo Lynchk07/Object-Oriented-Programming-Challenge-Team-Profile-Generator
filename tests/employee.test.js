@@ -1,11 +1,19 @@
-const Employee = require("../index");
+const Employee = require("../lib/employee");
 
-describe ("index", () => {
+describe ("employee", () => {
     describe("Initialization", () => {
         //positive test
-        it ("should create an object",)
-    }
-    
-    )
-}
-)
+        it ("return employee", () =>{
+            const namex = new NameX
+            expect(namex).toBe(true)
+        })
+        it ("return employee", () =>{
+            const id = new id
+            expect(id).toBe(true)
+        })
+        it ("return employee", () =>{
+            const email = new email
+            expect(email).toBe(true)
+        })
+    })
+});

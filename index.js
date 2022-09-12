@@ -40,27 +40,59 @@ const fakeEmp = [
 inquirer.prompt([
         {
             type: 'input',
-            name: 'Team Manager',
+            name: 'name',
             message: 'What is your team managers name?',
             
         },
         {
             type: 'input',
-            name: 'employee_number',
-            message: 'what is the team managers employee number?',
+            name: 'id',
+            message: 'What is your team managers id?',
             
         },
         {
             type: 'input',
-            name: 'employee_email',
-            message: 'what is the team managers employee email?',
+            name: 'email',
+            message: 'What is your team managers email?',
+            
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is your team managers office number?',
+            
+        },
+        {
+            type: 'List',
+            name: 'Team Manager',
+            message: 'Which type of team member would you like to add?',
+            choices: ['Engineer','Intern',"I don't want to add any employee's"]
+            
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'what is the employee number?',
+            
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'what is the employee email?',
             
             
         },
         {
             type: 'input',
-            name: 'github_username',
+            name: 'github',
             message: 'what is the the github user name?',
+            
+        },
+        {
+            type: 'list',
+            name: 'school',
+            message: 'Are you currently a student?',
+            choice: ["yes","no"]
             
         },
 

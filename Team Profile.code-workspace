@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": ".."
+		},
+		{
+			"path": "../../READMe-Generator---Node.js"
 		}
 	],
 	"settings": {}
