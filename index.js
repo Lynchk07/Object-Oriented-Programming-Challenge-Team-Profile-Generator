@@ -140,16 +140,34 @@ const createInt = () => {
     ]);
 
     .then((answers) => {
-        const intern = new Intern(answers.name, answers.id, answers.email,answers.school);
-
+        const intern = new Intern(answers.namex, answers.id, answers.email,answers.school);
+        // add intern to employee profile array data
+        employeeData.push(intern);
+        logNextEmp ();
     });
 }
 
 
+// function to write HTML
 
+fs.writeFile (filename,JSON.stringify(answers,null,"\t"),(err) => err ? console.log(err) : console.log ('success!')
+);
 
+function createHtml (req) {
+    let header =``;
+    let body =``;
 
+return '<!DOCTYPE html>'
+    + '<html><head>'+ header + '</head><body>' + body + '</body></html>'
+};
 
+let fileStream = fs.createWriteStream(filename);
+
+fileStream.once('open',function(fd){
+    let html = buildEmpHtml ();
+
+    fileStream.end(html);
+})
 
 
 
