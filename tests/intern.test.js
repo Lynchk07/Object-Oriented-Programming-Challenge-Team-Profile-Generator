@@ -4,7 +4,7 @@ describe ("intern", () => {
     describe("Initialization", () => {
         //positive test
         it ("return intern", () =>{
-            const namex = new NameX
+            const namex = new nameX
             expect(namex).toBe(true)
         })
         it ("return intern", () =>{
@@ -17,7 +17,6 @@ describe ("intern", () => {
         })
 
         it ("return intern", () =>{
-            const engineer = new engineer
             expect(school).toBe(true)
         })
     })
