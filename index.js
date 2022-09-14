@@ -49,13 +49,14 @@ inquirer.prompt ([
 //answers for manager questions creates a new manager object. 
     .then ((answers)=> {
         const manager = new manager(answers.namex,answers.id,answers.email,answers.officeNumber);
+
         //adds employee to the array of data for all employees but categorizes as manager. 
         employeeData.push(manager);
         
         logNextEmp ();
     });
 
-
+//prompt questions for next employee answers 
     const logNextEmp = ()=> {
         inquirer.prompt ([
             
@@ -74,7 +75,7 @@ inquirer.prompt ([
             }else if(answers.add === 'Add an intern to employee profile') {
                 createInt();
             }else {
-                const generateHtml = generateEmpHTML(employees);
+                const generateHtml = generateEmpHTML(employee);
                 createHtml(generateHtml);
             }
         })
@@ -146,7 +147,7 @@ const createInt = () => {
     ])
 
     .then((answers) => {
-        const intern = new Intern(answers.namex, answers.id, answers.email,answers.school);
+        const intern = new intern(answers.namex, answers.id, answers.email,answers.school);
         // add intern to employee profile array data
         employeeData.push(intern);
         logNextEmp ();
@@ -154,7 +155,7 @@ const createInt = () => {
 };
     
 // function to write HTML
-fs.writeFile (filename,JSON.stringify(answers,null,"\h"),(err) => err ? console.log(err) : console.log ('success!')
+fs.writeFile (filename,JSON.stringify(answers,null,"\n"),(err) => err ? console.log(err) : console.log ('success!')
 );
 
 function createHtml (req) {
