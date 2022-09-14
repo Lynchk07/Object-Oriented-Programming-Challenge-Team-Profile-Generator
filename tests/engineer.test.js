@@ -2,23 +2,25 @@ const Engineer = require("../lib/engineer")
 
 describe ("engineer", () => {
     describe("Initialization", () => {
-        //positive test
-        it ("return employee", () =>{
-            const namex = new NameX
-            expect(namex).toBe(true)
-        })
-        it ("return employee", () =>{
-            const id = new id
-            expect(id).toBe(true)
-        })
-        it ("return employee", () =>{
-            const email = new email
-            expect(email).toBe(true)
-        })
-
-        it ("return engineer", () =>{
-            const engineer = new engineer
-            expect(github).toBe(true)
-        })
-    })
-});
+        
+                it ("should create an object with name,id,github repo,and email", () =>{
+                    //arrange
+                    const michael = {
+                        namex:'michael',
+                        id: 6,
+                        email: 'paper2@gmail.com',
+                        github: 'michaelScoot'
+                    }
+        
+                    //act
+                   const employee = new employee('michael',6,'paper1@gmail.com');
+        
+                    //Object properties are equal to what we expect them to be. 
+                    expect(employee.namex).toEqual(michael.namex);
+                    expect(employee.id).toEqual(michael.id);
+                    expect(employee.email).toEqual(michael.email);
+                    expect(employee.officeNumber).toEqual(michael.github);
+                });
+                
+            });
+        });
