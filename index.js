@@ -76,7 +76,6 @@ const logNextEmp = () => {
                 createInt();
             } else {
                 fs.writeFile('./dist/index.html', createHtml(employeeCards), (err) => err ? console.log(err) : console.log('success!'));
-
             }
         })
 };
@@ -177,7 +176,7 @@ function createHtml() {
 //Initialize 
 function init() {
     createManager();
-    writeToFile(createHTML(Manager,Engineer,Intern));
+    // 
 }
 
 init();
