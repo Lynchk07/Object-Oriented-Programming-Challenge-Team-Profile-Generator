@@ -1,0 +1,13 @@
+/* Employee card colors */
+
+.bg-manager {
+    background-color: rgb(129, 185, 222);
+}
+
+.bg-engineer {
+    background-color: rgb(200, 234, 156);
+}
+
+.bg-intern {
+    background-color: rgb(247, 168, 193);
+}

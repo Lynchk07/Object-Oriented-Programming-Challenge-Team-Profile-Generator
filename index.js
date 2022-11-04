@@ -11,6 +11,9 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Employee = require('./lib/employee');
 
+// Location where the html will be rendered from
+const writeToHTML = require("./utils/writetoHtml");
+
 //employee array - used to pull from later 
 let employeeCards = [];
 
@@ -160,17 +163,11 @@ const createInt = () => {
 };
 
 // // // function to write HTML
-function createHtml() {
-    let header = answers.namex;
-    let body = ``
-    for (let i = 0; i < employeeCards.length; i++) {
-        employeeCards[Employee] = body 
-       
-    }
-    return '<!DOCTYPE html>'
-        + '<html><head>' + header + '</head><body>' + body + '</body></html>'
-
-};
+function createHTML() {
+    fs.writeFile('./dist/index.html', writeToHTML(employeeCards),
+      (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
 
 
 //Initialize 
