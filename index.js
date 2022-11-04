@@ -167,13 +167,13 @@ function createHTML() {
     fs.writeFile('./dist/index.html', writeToHTML(employeeCards),
       (err) =>
       err ? console.log(err) : console.log('Success!')
-    );
+)};
 
 
 //Initialize 
 function init() {
     createManager();
     // 
-}
+};
 
-init();
+init ();

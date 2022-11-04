@@ -72,7 +72,7 @@ function newIntern(info) {
 }
 
 // function to create main html page
-function renderSite(info) {
+function writeToHTML(info) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
