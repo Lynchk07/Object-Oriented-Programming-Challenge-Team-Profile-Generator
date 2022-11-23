@@ -35,5 +35,5 @@
   XX@gmail.com
 
   ## Video Tutorial Link 
-  [![Vlog]]({https://drive.google.com/file/d/1rX1cHJODs5ba3lK9KYK89um5zdalzRFH/view} "Employee Generator code walk through - tests and prompts VLog")
+  [Vlog](https://drive.google.com/file/d/1rX1cHJODs5ba3lK9KYK89um5zdalzRFH/view) "Employee Generator code walk through - tests and prompts Vlog"
   
