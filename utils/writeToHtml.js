@@ -1,5 +1,6 @@
 
-// JS functions to create new cards for each member of the team.
+// JS functions to create new cards for each member of the team.import * as fs from 'fs';
+
 
 // manager card
 function newManager(info) {
@@ -73,6 +74,9 @@ function newIntern(info) {
 
 // function to create main html page
 function writeToHTML(info) {
+
+console.table(info)
+
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -91,9 +95,9 @@ function writeToHTML(info) {
     </nav>
             <main class="container my-5">
             <div class="row justify-content-center">
-            ${newManager(info.filter(member => member.getRole() === "Manager"))}
-            ${newEngineer(info.filter(member => member.getRole() === "Engineer"))}
-            ${newIntern(info.filter(member => member.getRole() === "Intern"))}
+            ${newManager(info.filter(member => member.getRole() === "manager"))}
+            ${newEngineer(info.filter(member => member.getRole() === "engineer"))}
+            ${newIntern(info.filter(member => member.getRole() === "intern"))}
             </div>
             </main>
        

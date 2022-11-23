@@ -25,7 +25,7 @@ const createManager = () => {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'namex',
+            name: 'name',
             message: 'What is your team managers name?',
 
         },
@@ -52,7 +52,7 @@ const createManager = () => {
 
         //answers for manager questions creates a new manager object. 
         .then((answers) => {
-            const manager = new Manager(answers.namex, answers.id, answers.email, answers.officeNumber);
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
 
             //adds employee to the array of data for all employees but categorizes as manager. 
             employeeCards.push(manager);
@@ -78,7 +78,7 @@ const logNextEmp = () => {
             } else if (answers.addEmployee === 'Intern') {
                 createInt();
             } else {
-                fs.writeFile('./dist/index.html', createHtml(employeeCards), (err) => err ? console.log(err) : console.log('success!'));
+                fs.writeFile('./dist/index.html', writeToHTML(employeeCards), (err) => err ? console.log(err) : console.log('success!'));
             }
         })
 };
@@ -89,7 +89,7 @@ const createEng = () => {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'namex',
+            name: 'name',
             message: "What is the Engineer's name?",
 
         },
@@ -115,7 +115,7 @@ const createEng = () => {
         },
     ])
     .then((answers) => {
-        const engineer = new Engineer(answers.namex, answers.id, answers.email, answers.github);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         // add intern to employee profile array data
         employeeCards.push(engineer);
         logNextEmp();
@@ -128,7 +128,7 @@ const createInt = () => {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'namex',
+            name: 'name',
             message: "What is the intern's name?",
 
         },
@@ -155,19 +155,37 @@ const createInt = () => {
     ])
 
         .then((answers) => {
-            const intern = new Intern(answers.namex, answers.id, answers.email, answers.school);
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
             // add intern to employee profile array data
             employeeCards.push(intern);
             logNextEmp();
         });
 };
 
-// // // function to write HTML
+// // // function to write HTML - need help here
+
 function createHTML() {
-    fs.writeFile('./dist/index.html', writeToHTML(employeeCards),
-      (err) =>
-      err ? console.log(err) : console.log('Success!')
-)};
+
+   return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <title> EMPLOYEE Document</title>
+    </head>
+    <body>
+        <!--make a clickable link in html file-->
+
+        <a href="mailto:" target="_blank"></a>
+        <!--to do - - bootstrap CDN-->
+    
+        <div class="employee"></div>
+        
+    </body>
+    </html>`
+};
 
 
 //Initialize 
